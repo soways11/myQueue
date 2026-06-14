@@ -30,7 +30,7 @@ template <typename type> queue<type>::~queue(){
     }
 }
 template <typename type> void  queue<type>::push(type x){
-    if (size <= 0){ // if size == 0, i have to set the same value for lastElement and firstElement
+    if (size <= 0){ // if size == 0, firstElement and lastElement have to be the same
         element<type>* cur = new element<type>; // allocate memory for new element
         (*cur).value = x;
         (*cur).pointer = nullptr;
@@ -49,7 +49,7 @@ template <typename type> void  queue<type>::push(type x){
 template <typename type> void queue<type>::pop(){
     if (size <= 0){ // if size == 0 return
         return;
-    }else if (size == 1){ // if size == 1, queue becomes void
+    }else if (size == 1){ // if size == 1, queue becomes empty
         delete firstElement; // deallocate memory of first element
         firstElement = nullptr;
         lastElement = nullptr;
@@ -76,4 +76,4 @@ template <typename type> bool queue<type>::empty(){
     }else{
         return 0;
     }
-}
+} 
