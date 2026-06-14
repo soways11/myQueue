@@ -15,7 +15,7 @@ template <typename type> class queue{
     type front(); // return first element of queue
     type back(); // return last element of queue
     long long int getSize(); // return size
-    bool empty(); // check if array is empty
+    bool empty(); // check if queue is empty
 };
 template <typename type> queue<type>::queue(){
     firstElement = nullptr;
