@@ -23,10 +23,8 @@ template <typename type> queue<type>::queue(){
     size = 0;
 }
 template <typename type> queue<type>::~queue(){
-    for (int i = 0; i < size; i++){ // delete size elements, because queue include size elements, when we delete size elements, queue becomes empty
-        element<type>* cur = firstElement;
-        firstElement = (*cur).pointer;
-        delete cur; // deallocate memory of first element
+    while (!empty()){
+        pop();
     }
 }
 template <typename type> void  queue<type>::push(type x){
@@ -62,10 +60,18 @@ template <typename type> void queue<type>::pop(){
     }
 }
 template <typename type> type queue<type>::front(){
-    return (*firstElement).value;
+    if (size > 0){
+        return (*firstElement).value;
+    }else{
+        return 0;
+    }
 }
 template <typename type> type queue<type>::back(){
-    return (*lastElement).value;
+        if (size > 0){
+        return (*lastElement).value;
+    }else{
+        return 0;
+    }
 }
 template <typename type> long long int queue<type>::getSize(){
     return size;
