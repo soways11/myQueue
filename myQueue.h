@@ -1,9 +1,9 @@
 #ifndef myQueue
 #define myQueue
 namespace myLibrary{
-    template <typename type> struct myQueueElement{ // struct, that will be used as element of stack
+    template <typename typeInElement> struct myQueueElement{ // struct, that will be used as element of stack
         myQueueElement* pointer;
-        type value;
+        typeInElement value;
     };
     template <typename type> class queue{
         private:
