@@ -33,7 +33,6 @@ namespace myLibrary{
         while (!empty()){
             pop();
         }
-        size = 0;
     }
     template <typename type> void  queue<type>::push(type x){   
        if (size <= 0){ // if size == 0, firstElement and lastElement have to be the same
